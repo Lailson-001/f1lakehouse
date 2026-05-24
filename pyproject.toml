@@ -1,0 +1,15 @@
+[project]
+name = "f1lakehouse"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "boto3>=1.43.9",
+    "dotenv>=0.9.9",
+    "fastf1>=3.8.3",
+    "fastparquet>=2026.5.0",
+    "pandas>=2.3.3",
+    "requests>=2.34.2",
+    "tqdm>=4.67.3",
+]
