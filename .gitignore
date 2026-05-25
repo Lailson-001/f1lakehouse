@@ -12,4 +12,5 @@ data/
 *.parquet
 .env
 .venv/
+*.txt
 

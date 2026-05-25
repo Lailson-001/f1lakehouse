@@ -79,25 +79,28 @@ class collectResults:
         for year in self.years:
             print(f"coletando dados do ano{year}")
             self.process_year_modes(year)
-            time.sleep(10)
+            time.sleep(2)
             
 #%%
-parser = argparse.ArgumentParser()
-parser.add_argument("--start",type=int,default=0)
-parser.add_argument("--stop", type=int,default=0)
-parser.add_argument("--years", "-y", nargs="+", type=int)
-parser.add_argument("--modes","-m", nargs="+")
-args = parser.parse_args()
 
-if args.years:
-    collect = collectResults(args.years,args.modes)
-   
-elif args.start and args.stop:
-    years = [i for i in range(args.start,args.stop+1)]    
-    collect = collectResults(years,args.modes)
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--start",type=int,default=0)
+    parser.add_argument("--stop", type=int,default=0)
+    parser.add_argument("--years", "-y", nargs="+", type=int)
+    parser.add_argument("--modes","-m", nargs="+")
+    args = parser.parse_args()
 
-else:
-    parser.error("Você precisa informar --years ou --start/--stop")
+    if args.years:
+        collect = collectResults(args.years,args.modes)
     
-collect.process_years()
+    elif args.start and args.stop:
+        years = [i for i in range(args.start,args.stop+1)]    
+        collect = collectResults(years,args.modes)
 
+    else:
+        parser.error("Você precisa informar --years ou --start/--stop")
+
+    collect.process_years()
+
+#%%
