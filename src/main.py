@@ -20,7 +20,7 @@ while True:
     collect_data.process_years()
 
     print("Enviando dados...")
-    Sender_data = Sender(bucket_name= BUCKET_NAME,bucket_folder="f1/results")
+    Sender_data = Sender(bucket_name= BUCKET_NAME,bucket_folder="f1-results-raw/results")
     Sender_data.process_folder("data/")
 
     print("Iteração finalizada")
